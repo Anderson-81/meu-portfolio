@@ -99,7 +99,7 @@ li {
   margin: 8px 0;
 }
 .projeto {
-  background-color: #f5f5f5;
+  background-color: #fca31e;
   padding: 20px;
   border-radius: 10px;
   margin-top: 20px;
@@ -285,3 +285,399 @@ p {
   border-radius: 10px;
   border: 1px solid #383838;
 }
+
+.galeria-projeto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.imagem-projeto {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  background: #f5f5f5;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+@media (max-width: 600px) {
+  .galeria-projeto {
+    justify-content: center;
+  }
+
+  .imagem-projeto {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.carrossel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  margin: 20px auto 0;
+}
+
+.imagem-projeto {
+  width: 100%;
+  max-width: 450px;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #f5f5f5;
+}
+
+.seta {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: #2563eb;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.seta:hover {
+  background: #1d4ed8;
+}
+
+.contador-imagens {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.indicadores {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 12px 0 20px;
+}
+
+.indicador {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+}
+
+.indicador.ativo {
+  background: #2563eb;
+  transform: scale(1.3);
+}
+
+@media (max-width: 600px) {
+  .carrossel {
+    gap: 6px;
+  }
+
+  .imagem-projeto {
+    height: 220px;
+    min-width: 0;
+  }
+
+  .seta {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+}
+
+/* Área do carrossel */
+.carrossel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  margin: 20px auto 0;
+}
+
+/* Imagens do projeto */
+.imagem-projeto {
+  width: 100%;
+  max-width: 450px;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #f5f5f5;
+}
+
+/* Animação suave ao trocar de imagem */
+.animacao-imagem {
+  animation: aparecer 0.6s ease-in-out;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Setas de navegação */
+.seta {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: #2563eb;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.seta:hover {
+  background: #1d4ed8;
+  transform: scale(1.1);
+}
+
+/* Contador de imagens */
+.contador-imagens {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Bolinhas indicadoras */
+.indicadores {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 12px 0 20px;
+}
+
+.indicador {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.indicador.ativo {
+  background: #2563eb;
+  transform: scale(1.3);
+}
+
+/* Adaptação para celulares */
+@media (max-width: 600px) {
+  .carrossel {
+    gap: 6px;
+  }
+
+  .imagem-projeto {
+    height: 220px;
+    min-width: 0;
+  }
+
+  .seta {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+}
+
+/* Respeita quem prefere menos animações */
+@media (prefers-reduced-motion: reduce) {
+  .animacao-imagem {
+    animation: none;
+  }
+
+  .seta,
+  .indicador {
+    transition: none;
+  }
+}
+
+/* Organização dos cartões de projetos */
+.lista-projetos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+/* Cada projeto */
+.projeto {
+  min-width: 0;
+  padding: 20px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Carrossel */
+.carrossel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin: 20px auto 0;
+}
+
+.imagem-projeto {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 450px;
+  height: 280px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #f5f5f5;
+}
+
+/* Animação das imagens */
+.animacao-imagem {
+  animation: aparecer 0.6s ease-in-out;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Setas */
+.seta {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: #2563eb;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.seta:hover {
+  background: #1d4ed8;
+  transform: scale(1.08);
+}
+
+/* Contador */
+.contador-imagens {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Bolinhas */
+.indicadores {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 12px 0 20px;
+}
+
+.indicador {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.indicador.ativo {
+  background: #2563eb;
+  transform: scale(1.3);
+}
+
+/* Celulares e telas menores */
+@media (max-width: 760px) {
+  .lista-projetos {
+    grid-template-columns: 1fr;
+  }
+
+  .imagem-projeto {
+    height: 240px;
+  }
+}
+
+/* Acessibilidade: preferência por menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .animacao-imagem {
+    animation: none;
+  }
+
+  .seta,
+  .indicador {
+    transition: none;
+  }
+}
+.projeto p {
+  color: #fafafa;
+}
+
+/* Forçar a cor de fundo dos dois cartões */
+#projetos .lista-projetos .projeto {
+  background-color: #36393a !important;
+  border: 2px solid #4fec30;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+/* Animação dos cartões dos projetos */
+#projetos .lista-projetos .projeto {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+#projetos .lista-projetos .projeto:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.25);
+  border-color: #fdfeff;
+}
+
+/* Efeito ao usar teclado ou navegar por toque */
+#projetos .lista-projetos .projeto:focus-within {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+}
+
+/* Respeita a preferência por menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  #projetos .lista-projetos .projeto {
+    transition: none;
+  }
+
+  #projetos .lista-projetos .projeto:hover {
+    transform: none;
+  }
+}
+
+
+
